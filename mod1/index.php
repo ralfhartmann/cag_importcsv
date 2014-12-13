@@ -271,7 +271,7 @@ class  tx_cagimportcsv_module1 extends t3lib_SCbase {
                                     }
                                     $this->debug("<hr size='1' style='border: 1px dotted black;'><b>Processing File: " . $file . "</b><br><a href='../" . substr($file, strlen(t3lib_div::getIndpEnv('TYPO3_DOCUMENT_ROOT') . "/")) . "' target='_new'><font color='blue'>Click here to open CSV-File</font></a>");
                                     if ($isDir) {
-                                        // if (!file_exists($mappingFilePath))
+                                        if (!file_exists($mappingFilePath)  || strpos($file, ".map") != strlen($file) - 4)
                                             $mappingFilePath = substr($file, 0, strlen($file) -4) . ".map";
                                     }
                                     if (file_exists($mappingFilePath))

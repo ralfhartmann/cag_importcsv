@@ -1,3 +1,8 @@
 2009-12-23 Jens Eipel  <j.eipel@connecta.ag>
 
 	* initial code generated with kickstarter
+
+2011-03-10
+    * Fixed a bug concerning import of a whole directory of CSV Files.
+
+
