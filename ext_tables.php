@@ -5,7 +5,9 @@ if (!defined ('TYPO3_MODE')) {
 
 if (TYPO3_MODE == 'BE') {
 	t3lib_extMgm::addModulePath('tools_txcagimportcsvM1', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
-		
+	t3lib_extMgm::addModulePath('file_txcagimportcsvM1', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
+
 	t3lib_extMgm::addModule('tools', 'txcagimportcsvM1', '', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
+	t3lib_extMgm::addModule('file', 'txcagimportcsvM1', '', t3lib_extMgm::extPath($_EXTKEY) . 'mod1/');
 }
 ?>
