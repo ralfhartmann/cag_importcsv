@@ -6,3 +6,5 @@
     * Fixed a bug concerning import of a whole directory of CSV Files.
 
 
+2011-07-28
+    * Fixed an issue where some rows / lines where not fully imported

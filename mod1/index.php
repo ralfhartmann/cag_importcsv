@@ -560,7 +560,7 @@ class  tx_cagimportcsv_module1 extends t3lib_SCbase {
 
 
                             $i = 0;
-                            while ($data = fgetcsv ($fp, 1000, $delimiter)) { 
+                            while ($data = fgetcsv ($fp, 10000, $delimiter)) { 
                                 $row = array();
                                 $num = count ($data);
                                 for ($c=0; $c < $num; $c++) {
