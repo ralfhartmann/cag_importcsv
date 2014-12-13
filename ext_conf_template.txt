@@ -1,0 +1,11 @@
+
+# cat=basic; type=input; label=importFilePath: Default path to CSV-File(s) (full path to a single File or Directory containing multiple CSV-Files). Leave empty for now if you are unsure.
+csvFilePath = fileadmin
+# cat=basic; type=input; label=mappingFilePath: Default Mapping-File (Mapping-File contains definitions for Mapping from CSV-columns to Database columns). Leave empty if you are unsure.
+mappingFilePath = fileadmin
+# cat=basic; type=input; label= Default Table to import Data into. Leave empty for now if you are unsure.
+targetTable = 
+# cat=basic; type=input; label=pid: Default Page ID to set for imported Data. Leave empty if you are unsure.
+storagePID = 
+# cat=basic; type=boolean; label=Please go to Module 'Import CSV' to begin with your import. I understand and know everything about TYPO3 Backend Modules ...
+ok =

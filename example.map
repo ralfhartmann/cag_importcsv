@@ -1,0 +1,49 @@
+# Example Mapping File  created on 2010.01.03 21:21:46
+
+# This is a comment. The line starts with '#'
+
+# Lines containing Instructions / Configurations start with ':'
+# Instruction Keywords are :table, :set, :update, :clearTable, :automap, :automapUpdate
+
+
+# Name of Table you want to import the CSV-Data into
+:table=my_table_name
+
+# Mapping the CSV-Columns to the Database Table-Columns
+# CSV-Column-Name = Database-Table-Column-Name
+# If you want to insert String-Data you need to quote the CSV-Column-Name as done below (e.g. 'Name'=name).
+'Name'=name
+'Vorname'=firstname
+'Email'=email
+
+
+# If you want to update Data instead of inserting data, use :where and a condition.  
+# Variable / References to the values in your CSV-Data can be used and must be written in curly Brackets. Syntax: {MyColumnName} 
+# In this example the record to be updated must match the Emailadress in your CSV-Data.
+#:update = where email = '{Email}'
+
+# Option to clear Table before inserting Data
+#:clearTable = false
+
+# Option to Map CSV-Column-Names to Database-Column-Names if no Mapping is specified for a CSV-Column.
+# For mapping a field on your own please see below in section 'Mapping Fields'
+#:automap=true
+
+#Update the Mappings below in this file when automap and automapUpdate option is true
+#:automapUpdate=true
+
+# Create a new CSV-Column while importing using PHP-Function.
+# This option is very powerfull.
+# In this example we are creationg a new column called 'mynewcolumn' containing the fields Vorname and Name
+:set 'mynewcolumn'='{Name}' . ' ' .  'Voorname'
+
+# You can create a new column to Import as a result of a subselect.
+# In this example we are subselecting the userid from the table fe_users that matches the emailadress of the currnt row imported.
+# In this case we can use the Variable user_id later in the import mapping process seem further down ('mynewcolumn' = fullname).
+:subselect 'user_id'= select uid as user_id from fe_users where email = '{Email}'
+
+# Some additional Mapping of fields 
+# CSV-Column-Name = Database-Column-Name
+user_id = userid 
+'mynewcolumn' = fullname 
+
